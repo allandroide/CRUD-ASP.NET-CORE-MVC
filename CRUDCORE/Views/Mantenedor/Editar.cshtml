@@ -1,0 +1,45 @@
+﻿@model RegistroModel;
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Editar Pelicula
+    </div>
+    <div class="card-body">
+        <form asp-action="Editar" asp-controller="Mantenedor" method="post">
+            <input asp-for="idRegistro" type="hidden" class="form-control">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input asp-for="Nombre" type="text" class="form-control">
+                <span asp-validation-for="Nombre" class="text-danger">
+                </span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Genero</label>
+                <input asp-for="Genero" type="text" class="form-control">
+                <span asp-validation-for="Genero" class="text-danger">
+                </span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Año</label>
+                <input asp-for="Año" type="number" class="form-control">
+                <span asp-validation-for="Año" class="text-danger">
+                </span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a asp-action="Listar" asp-controller="Mantenedor" class="btn btn-warning ">
+                Volver a la lista
+            </a>
+
+        </form>
+
+
+
+    </div>
+</div>
+
+
